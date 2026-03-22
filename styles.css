@@ -1,0 +1,83 @@
+    body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f5f0dc, #e8dfc7);
+    font-family: 'Comic Sans MS', cursive;
+    overflow: hidden;
+}
+
+/* Contenedor principal */
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f5f0dc, #e8dfc7);
+    font-family: 'Patrick Hand', cursive;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: clamp(20px, 3vw, 40px);
+    color: #333;
+}
+
+h2 {
+    font-size: clamp(16px, 2.5vw, 30px);
+    margin-top: 10px;
+    color: #444;
+}
+
+/* Imagen del ramo */
+.bouquet {
+    width: clamp(180px, 25vw, 350px);
+    margin-top: 20px;
+}
+
+/* Contenedor de flores cayendo */
+#flowers-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+/* Flor individual */
+.flower {
+    position: absolute;
+    opacity: 0.9;
+    animation: fall linear forwards;
+    user-select: none;
+}
+
+/* Animación de caída */
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+@media (min-width: 1200px) {
+    .bouquet {
+        width: 400px;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+}
