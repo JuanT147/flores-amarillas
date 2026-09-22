@@ -81,3 +81,99 @@ h2 {
         font-size: 45px;
     }
 }
+/* --- ESTILOS GENERALES Y CONTENEDOR --- */
+body {
+    font-family: 'Patrick Hand', cursive, sans-serif;
+    background-color: #faf6ee;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 10;
+}
+
+.bouquet {
+    max-width: 320px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.bouquet:hover {
+    transform: scale(1.04);
+}
+
+/* --- BOTÓN ROMÁNTICO (ESTILO PINK GOLD & LATIDO) --- */
+.btn-romantico {
+    margin-top: 10px;
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+    border: 2px solid #ffffff;
+    color: white;
+    padding: 12px 28px;
+    font-family: 'Patrick Hand', cursive, sans-serif;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255, 117, 140, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    animation: latido 2s infinite ease-in-out;
+}
+
+.btn-romantico:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(255, 117, 140, 0.6);
+    background: linear-gradient(135deg, #ff5277 0%, #ff6097 100%);
+}
+
+.icono-rosa {
+    font-size: 1.8rem;
+    transition: transform 0.4s ease;
+}
+
+.btn-romantico:hover .icono-rosa {
+    transform: rotate(20deg) scale(1.2);
+}
+
+.texto-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.1;
+}
+
+.texto-btn small {
+    font-size: 0.9rem;
+    opacity: 0.95;
+    font-weight: normal;
+}
+
+/* Animación suave de latido constante */
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+/* Estado cuando la música está SONANDO */
+.btn-romantico.sonando {
+    background: linear-gradient(135deg, #e63946 0%, #ff4d6d 100%);
+    animation: onda-brillo 1.5s infinite;
+}
+
+@keyframes onda-brillo {
+    0% { box-shadow: 0 0 0 0 rgba(255, 77, 109, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 77, 109, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 77, 109, 0); }
+}

@@ -35,3 +35,29 @@ function createFlower() {
 
 // Crear flores constantemente
 setInterval(createFlower, 250);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btnMusica = document.getElementById('btnMusica');
+    const audio = document.getElementById('audioFondo');
+    const iconoRosa = btnMusica.querySelector('.icono-rosa');
+    const estadoTexto = document.getElementById('estadoTexto');
+
+    btnMusica.addEventListener('click', () => {
+        // Si la música está pausada, la reproducimos
+        if (audio.paused) {
+            audio.play().then(() => {
+                btnMusica.classList.add('sonando');
+                iconoRosa.textContent = '🌹✨';
+                estadoTexto.textContent = 'Pausar música ⏸️';
+            }).catch(error => {
+                console.log("Error al reproducir el audio: ", error);
+            });
+        } else {
+            // Si ya está sonando, la pausamos
+            audio.pause();
+            btnMusica.classList.remove('sonando');
+            iconoRosa.textContent = '🌹';
+            estadoTexto.textContent = 'Toca para escuchar 🎵';
+        }
+    });
+});
